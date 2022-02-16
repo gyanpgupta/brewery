@@ -1,0 +1,38 @@
+version: '2.2'
+networks:
+  isolation-network:
+    driver: bridge
+services:
+    accounting:
+        container_name: accounting
+        build:
+            context: ./accounting
+        ports:
+            - "5002:5002"
+        networks:
+            - isolation-network
+
+    sales:
+        container_name: sales
+        build:
+            context: ./sales
+        ports:
+            - "5001:5001"
+        networks:
+            - isolation-network
+    warehouse:
+        container_name: warehouse
+        build:
+            context: ./warehouse
+        ports:
+            - "5003:5003"
+        networks:
+            - isolation-network
+    api:
+        container_name: api
+        build:
+            context: ./api
+        ports:
+            - "5000:5000"
+        networks:
+            - isolation-network
