@@ -48,7 +48,7 @@ For accounts
 
 For warehouse
 `http://0.0.0.0:5000/warehouse/beers`
-`http://0.0.0.0:5000/warehouse/beer/carlsberg`
+`http://0.0.0.0:5000/warehouse/beers/carlsberg`
 
 ## Shutdown
 
