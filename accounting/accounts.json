@@ -1,5 +1,5 @@
 {
-    "abinash": 54321,
-    "john": 22345,
-    "doe": 43434
+    "abinash": {"number": 54321},
+    "john": {"number": 22345},
+    "doe": {"number": 43434}
 }

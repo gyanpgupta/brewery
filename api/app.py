@@ -47,7 +47,7 @@ def beers():
 
 @app.route("/warehouse/beers/<name>", methods=["GET"])
 def beers_records(name):
-    url = "http://warehouse:5003/warehouse/beers"
+    url = "http://warehouse:5003/warehouse/beer"
     reply = requests.get(f"{url}/{name}")
     reply = reply.json()
 

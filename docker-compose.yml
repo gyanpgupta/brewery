@@ -5,6 +5,7 @@ networks:
 services:
     accounting:
         container_name: accounting
+        restart: always
         build:
             context: ./accounting
         ports:
@@ -14,6 +15,7 @@ services:
 
     sales:
         container_name: sales
+        restart: always
         build:
             context: ./sales
         ports:
@@ -22,6 +24,7 @@ services:
             - isolation-network
     warehouse:
         container_name: warehouse
+        restart: always
         build:
             context: ./warehouse
         ports:
@@ -30,9 +33,23 @@ services:
             - isolation-network
     api:
         container_name: api
+        restart: always
         build:
             context: ./api
         ports:
             - "5000:5000"
         networks:
             - isolation-network
+    nginx:
+        container_name: nginx
+        depends_on:
+            - api
+        restart: always
+        build: 
+            context: ./nginx
+        networks:
+            - isolation-network
+        expose:
+            - "8080"
+        ports:
+            - "80:8080"

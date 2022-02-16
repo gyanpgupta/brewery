@@ -1,5 +1,5 @@
 {
-    "carlsberg": 5,
-    "kingfisher": 2,
-    "foster": 4
+    "carlsberg": {"remaining": 5},
+    "kingfisher": {"remaining": 2},
+    "foster": {"remaining" : 4}
 }

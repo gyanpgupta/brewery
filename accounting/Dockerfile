@@ -3,4 +3,4 @@ ADD . /accounting
 WORKDIR /accounting
 RUN pip install flask gunicorn
 EXPOSE 5002
-CMD ["gunicorn", "-b", "0.0.0.0:5001", "accounting:app"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5002", "accounting:app"]
